@@ -70,7 +70,7 @@ class Dog
       SQL
       
       arr = DB[:conn].execute(sql, hash[:name], hash[:breed]).flatten
-      if !arr.empty? #if true, then dog does exist in database
+      if !arr.empty? 
         dog = self.new(id: arr[0], name: arr[1], breed: arr[2])
       else
         dog = self.create(hash)
